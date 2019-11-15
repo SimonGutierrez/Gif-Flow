@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './question.dart';
+
+
 void main() {
   runApp(MyApp());
 }
@@ -27,7 +30,7 @@ class MyAppState extends State<MyApp> {
   }
   @override
   Widget build(BuildContext context) {
-   
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -35,19 +38,7 @@ class MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(questions[questionIndex]),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: answerQuestion
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: answerQuestion
-            ),
-           RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: answerQuestion
-            ),
+            Question(questions[questionIndex]),
             new Image.network('https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp'),
           ],
         ),

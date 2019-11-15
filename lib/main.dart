@@ -10,20 +10,24 @@ class MyApp extends StatefulWidget {
   }
 }
 class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
-  void answerQuestion() {
-    setState(() {
-      questionIndex = questionIndex+1;
-      print(questionIndex);
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    var questions = [
+   var questions = [
       'What do you feel like listening to?',
       'do you wanna dance?',
       'how sleepy are you today?',
     ];
+  var questionIndex = 0;
+  void answerQuestion() {
+    setState(() {
+      if(questionIndex == questions.length-1) {
+        questionIndex = 0;
+      }
+
+      questionIndex = questionIndex+1;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+   
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -51,6 +55,7 @@ class MyAppState extends State<MyApp> {
     );
   }
 }
+
 // class MyApp extends StatelessWidget {
 //   // This widget is the root of your application.
 //   @override

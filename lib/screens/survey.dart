@@ -1,7 +1,8 @@
 //render survey for to suggest a playlist
 
 import 'package:flutter/material.dart';
-import '../questions.dart';
+import '../quiz.dart';
+import '../result.dart';
 
 class Survey extends StatefulWidget {
   @override
@@ -10,35 +11,35 @@ class Survey extends StatefulWidget {
   }
 }
 class SurveyState extends State<Survey> {
-   var questions = [
-      'What do you feel like listening to?',
-      'do you wanna dance?',
-      'how sleepy are you today?',
-    ];
-    var answerSet1 = [
-      'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
-      'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp',
-      'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
-    ];
-    var answerSet2 = [
-      'Country',
-      'Yes! Like a Square!',
-
-    ];
-    var kanyeSet = [
-      'https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp',
-      'https://i.giphy.com/media/zMCfqXkwjmTO8/giphy.webp',
-      'https://i.giphy.com/media/l2SpKjO20hPyhr1fy/giphy.webp',
+  final questions = const[
+      {'questionText':'What do you feel like listening to?',
+      'answers':[
+        'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+        'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+        'https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp'],
+        },
+        {'questionText':'Do you wanna dance?',
+      'answers':[
+        'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp'
+       'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp',
+        'https://i.giphy.com/media/zMCfqXkwjmTO8/giphy.webp'],
+        },
+        {'questionText':'How sleepy are you today?',
+      'answers':[
+        'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+        'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+        'https://i.giphy.com/media/l2SpKjO20hPyhr1fy/giphy.webp'],
+        },
     ];
 
   var questionIndex = 0;
   void answerQuestion() {
     setState(() {
-      if(questionIndex == questions.length-1) {
-        questionIndex = 0;
-      }
-
       questionIndex = questionIndex+1;
+      if(questionIndex < questions.length) {
+        print('still have questions');
+      }
+      else{print('no more questions');}
     });
   }
 
@@ -53,24 +54,11 @@ class SurveyState extends State<Survey> {
           },),
           ],
         ),
-        body: Column(
-          children: [
-            Question(questions[questionIndex]),
-            RaisedButton(
-              child: new Image.network(answerSet1[questionIndex]),
-              onPressed: answerQuestion
-            ),
-            RaisedButton(
-               child: new Image.network(kanyeSet[questionIndex]),
-              onPressed: answerQuestion
-            ),
-           RaisedButton(
-              child: new Image.network(kanyeSet[questionIndex]),
-              onPressed: answerQuestion,
-            ),
-          ],
+       body: (questionIndex < questions.length) ? Quiz(questions: questions,
+        questionIdx: questionIndex,
+        questionMethod: answerQuestion)
+        : Result()
         ),
-      ),
       theme: ThemeData(
         primaryColor: Colors.red[300],
         brightness: Brightness.dark,

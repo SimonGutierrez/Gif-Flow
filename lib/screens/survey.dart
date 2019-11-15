@@ -14,23 +14,55 @@ class SurveyState extends State<Survey> {
   final questions = const[
       {'questionText':'What do you feel like listening to?',
       'answers':[
-        'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
-        'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
-        'https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp'],
-        },
-        {'questionText':'Do you wanna dance?',
+          {
+            'gif':'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+            'Genre':'Country'
+          },
+          {
+            'gif':'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+            'Genre':'Rap'
+          },
+          {
+            'gif':'https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp',
+            'Genre':'Pop'
+          },
+        ],
+      },
+
+      {'questionText':'Do you wanna dance?',
       'answers':[
-        'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp'
-       'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp',
-        'https://i.giphy.com/media/zMCfqXkwjmTO8/giphy.webp'],
+        {
+          'gif':'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp',
+          'danceability': .3
         },
-        {'questionText':'How sleepy are you today?',
+        {
+          'gif':'https://i.giphy.com/media/wAxlCmeX1ri1y/giphy.webp',
+          'danceability': .6
+        },
+        {
+          'gif':'https://i.giphy.com/media/zMCfqXkwjmTO8/giphy.webp',
+          'danceability': .9
+          },
+        ],
+      },
+
+      {'questionText':'How sleepy are you today?',
       'answers':[
-        'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
-        'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
-        'https://i.giphy.com/media/l2SpKjO20hPyhr1fy/giphy.webp'],
+        {
+          'gif':'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+          'danceability': .3
         },
-    ];
+        {
+          'gif':'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+          'danceability': .6
+        },
+        {
+          'gif':'https://i.giphy.com/media/l2SpKjO20hPyhr1fy/giphy.webp',
+          'danceability': .9
+          },
+        ],
+      },
+  ];
 
   var questionIndex = 0;
   void answerQuestion() {

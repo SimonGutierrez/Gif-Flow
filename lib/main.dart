@@ -15,6 +15,25 @@ class MyAppState extends State<MyApp> {
       'do you wanna dance?',
       'how sleepy are you today?',
     ];
+    var answerSet1 = [
+      'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+      'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp',
+      'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+    ];
+    var answerSet2 = [
+      'Country',
+      'Yes! Like a Square!',
+
+    ];
+    var answerSet3 = [
+
+    ];
+    var kanyeSet = [
+      'https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp',
+      'https://i.giphy.com/media/zMCfqXkwjmTO8/giphy.webp',
+      'https://i.giphy.com/media/l2SpKjO20hPyhr1fy/giphy.webp',
+    ];
+
   var questionIndex = 0;
   void answerQuestion() {
     setState(() {
@@ -31,24 +50,23 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('GiffLow'),
+          title: Text('Gif-FLow'),
         ),
         body: Column(
           children: [
             Text(questions[questionIndex]),
             RaisedButton(
-              child: Text('Answer 1'),
+              child: new Image.network(answerSet1[questionIndex]),
               onPressed: answerQuestion
             ),
             RaisedButton(
-              child: Text('Answer 2'),
+               child: new Image.network(kanyeSet[questionIndex]),
               onPressed: answerQuestion
             ),
            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: answerQuestion
+              child: new Image.network(kanyeSet[questionIndex]),
+              onPressed: answerQuestion,
             ),
-            new Image.network('https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp'),
           ],
         ),
       ),

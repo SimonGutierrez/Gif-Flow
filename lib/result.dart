@@ -1,4 +1,15 @@
+import 'package:http/http.dart' as http;
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'dart:convert';
+
+  String url = '';
+
+  Future<String> getPost() async {
+    final response = await http.get('$url/1');
+    return json.decode(response.body);
+  }
+
 class Result extends StatelessWidget {
   final int resultScore;
 
@@ -15,6 +26,7 @@ class Result extends StatelessWidget {
 
     return resultText;
   }
+
 
   @override
   Widget build(BuildContext context) {

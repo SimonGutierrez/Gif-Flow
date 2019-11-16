@@ -1,5 +1,5 @@
 name: gif_flow
-description: A new Flutter project.
+description: My First Flutter project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -25,6 +25,10 @@ dependencies:
   cupertino_icons: ^0.1.2
   json_annotation: ^2.0.0
   http: any
+  assets_audio_player: ^1.0.1
+  flare_flutter: 1.3.8
+  audioplayers: 0.10.1
+ 
 
 dev_dependencies:
   flutter_test:

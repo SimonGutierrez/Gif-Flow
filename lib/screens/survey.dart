@@ -14,26 +14,61 @@ class SurveyState extends State<Survey> {
   final questions = const[
       {'questionText':'What do you feel like listening to?',
       'answers':[
-        'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
-        'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
-        'https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp'],
-        },
-        {'questionText':'Do you wanna dance?',
+          {
+            'gif':'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+            'score':1
+          },
+          {
+            'gif':'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+            'score':2
+          },
+          {
+            'gif':'https://i.giphy.com/media/LKqDgLlK6SuIM/giphy.webp',
+            'score':3
+          },
+        ],
+      },
+
+      {'questionText':'Do you wanna dance?',
       'answers':[
-        'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp'
-       'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp',
-        'https://i.giphy.com/media/zMCfqXkwjmTO8/giphy.webp'],
+        {
+          'gif':'https://i.giphy.com/media/AuIvUrZpzBl04/giphy.webp',
+          'score':1
         },
-        {'questionText':'How sleepy are you today?',
+        {
+          'gif':'https://i.giphy.com/media/wAxlCmeX1ri1y/giphy.webp',
+          'score':2
+        },
+        {
+          'gif':'https://i.giphy.com/media/zMCfqXkwjmTO8/giphy.webp',
+          'score':3
+          },
+        ],
+      },
+
+      {'questionText':'How sleepy are you today?',
       'answers':[
-        'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
-        'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
-        'https://i.giphy.com/media/l2SpKjO20hPyhr1fy/giphy.webp'],
+        {
+          'gif':'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+          'score':1
         },
-    ];
+        {
+          'gif':'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+          'score':2
+        },
+        {
+          'gif':'https://i.giphy.com/media/l2SpKjO20hPyhr1fy/giphy.webp',
+          'score':3
+          },
+        ],
+      },
+  ];
 
   var questionIndex = 0;
-  void answerQuestion() {
+  var _totalScore = 0;
+
+  void answerQuestion(int score) {
+    _totalScore+=score;
     setState(() {
       questionIndex = questionIndex+1;
       if(questionIndex < questions.length) {
@@ -57,7 +92,7 @@ class SurveyState extends State<Survey> {
        body: (questionIndex < questions.length) ? Quiz(questions: questions,
         questionIdx: questionIndex,
         questionMethod: answerQuestion)
-        : Result()
+        : Result(_totalScore)
         ),
       theme: ThemeData(
         primaryColor: Colors.red[300],

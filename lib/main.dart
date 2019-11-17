@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './screens/survey.dart';
-import 'screens/makeNewPlaylist.dart';
+import './screens/makeNewPlaylist.dart';
+import 'music_player.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +36,6 @@ class Home extends StatelessWidget {
             );
           }),
           IconButton(icon: Icon(Icons.add_circle),),//make a new playlist
-          IconButton(icon: Icon(Icons.audiotrack),)//see all playlists
           ],
         ),
         body: Center(

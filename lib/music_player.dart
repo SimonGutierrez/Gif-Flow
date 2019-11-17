@@ -62,7 +62,7 @@ class MusicPlayerState extends State<MusicPlayer> {
               MaterialPageRoute(builder: (context) => MyApp()),
             );
           },),
-          IconButton(icon: Icon(Icons.play_arrow), onPressed: () {
+          IconButton(icon: Icon(Icons.stop), onPressed: () {
             //  await audioPlayer.stop();
              stopMusic();
           },),

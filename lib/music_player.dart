@@ -1,11 +1,12 @@
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import './main.dart';
 
 
 
 class MusicPlayer extends StatefulWidget { 
-  final int resultSong;
+  final String resultSong;
   MusicPlayer(this.resultSong);
  
   @override
@@ -13,11 +14,12 @@ class MusicPlayer extends StatefulWidget {
 }
 
 class MusicPlayerState extends State<MusicPlayer> {
-  final int resultSong;
+  final String resultSong;
   MusicPlayerState(this.resultSong);
+  bool isplaying = false;
 
   AudioPlayer advancedPlayer;
- 
+
 
   @override
   initState() {
@@ -27,6 +29,15 @@ class MusicPlayerState extends State<MusicPlayer> {
 
   Future loadMusic() async {
     advancedPlayer = await AudioCache().play('music/$resultSong');
+    isplaying = true;
+  }
+
+
+  Future stopMusic() async {
+    if (isplaying == true) {
+      await advancedPlayer.stop();
+      isplaying = false;
+    } 
   }
   
   @override
@@ -47,8 +58,15 @@ class MusicPlayerState extends State<MusicPlayer> {
         appBar: AppBar(
           title: const Text('Your Song!'),
           actions: <Widget>[IconButton(icon: Icon(Icons.arrow_back), onPressed: () {
-            Navigator.pop(context);
-          },),],
+              Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => MyApp()),
+            );
+          },),
+          IconButton(icon: Icon(Icons.play_arrow), onPressed: () {
+            //  await audioPlayer.stop();
+             stopMusic();
+          },),
+          ],
         ),
         body: Center(
           child: Text('You are now listening to $resultSong', 

@@ -65,10 +65,10 @@ class SurveyState extends State<Survey> {
   ];
 
   var questionIndex = 0;
-  var _totalScore = 0;
+  var totalScore = 0;
 
   void answerQuestion(int score) {
-    _totalScore+=score;
+    totalScore+=score;
     setState(() {
       questionIndex = questionIndex+1;
       if(questionIndex < questions.length) {
@@ -92,7 +92,7 @@ class SurveyState extends State<Survey> {
        body: (questionIndex < questions.length) ? Quiz(questions: questions,
         questionIdx: questionIndex,
         questionMethod: answerQuestion)
-        : Result(_totalScore)
+        : Result(totalScore)
         ),
       theme: ThemeData(
         primaryColor: Colors.red[300],

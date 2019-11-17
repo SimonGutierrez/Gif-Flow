@@ -36,11 +36,6 @@ class Home extends StatelessWidget {
             );
           }),
           IconButton(icon: Icon(Icons.add_circle),),//make a new playlist
-          IconButton(icon: Icon(Icons.audiotrack), onPressed:() {
-              Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => MusicPlayer()),
-            );
-          })//see all playlists
           ],
         ),
         body: Center(

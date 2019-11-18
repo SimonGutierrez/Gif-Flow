@@ -26,7 +26,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center (child:  RaisedButton(
-          child: Text(energyLevel, style:TextStyle(fontSize:36,fontWeight:FontWeight.bold)),
+          child: Text('Play Now!', style:TextStyle(fontSize:36,fontWeight:FontWeight.bold)),
           onPressed: () {
               Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => MusicPlayer(energyLevel)),

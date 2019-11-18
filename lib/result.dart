@@ -10,9 +10,9 @@ class Result extends StatelessWidget {
   Result(this.resultScore);
 
   String get energyLevel{
-     String resultSong = 'Khruangbin - A Calf Born In Winter';
+     String resultSong = 'Khruangbin - A Calf Born In Winter.mp3';
     if(resultScore >3 && resultScore <= 6){
-      resultSong = 'Gang Starr - Full Clip';
+      resultSong = 'Gang Starr - Full Clip.mp3';
     }
     if(resultScore >6){
       resultSong = 'Kanye West - Follow God (Lyrics).mp3';

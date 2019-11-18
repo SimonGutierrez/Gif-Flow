@@ -78,8 +78,9 @@ class MusicPlayerState extends State<MusicPlayer> {
         body: Center(
           child: Text('You are now listening to $resultSong',
                   style: TextStyle(fontSize: 30.0,
-                  color: Colors.red[200]
+                  color: Colors.red[200],
             ),
+                  textAlign: TextAlign.center,
         ),
       ),
       ),

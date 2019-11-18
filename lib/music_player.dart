@@ -5,10 +5,10 @@ import './main.dart';
 
 
 
-class MusicPlayer extends StatefulWidget { 
+class MusicPlayer extends StatefulWidget {
   final String resultSong;
   MusicPlayer(this.resultSong);
- 
+
   @override
   MusicPlayerState createState() => new MusicPlayerState(resultSong);
 }
@@ -37,9 +37,9 @@ class MusicPlayerState extends State<MusicPlayer> {
     if (isplaying == true) {
       await advancedPlayer.stop();
       isplaying = false;
-    } 
+    }
   }
-  
+
   @override
   void dispose() {
     advancedPlayer = null;
@@ -69,7 +69,7 @@ class MusicPlayerState extends State<MusicPlayer> {
           ],
         ),
         body: Center(
-          child: Text('You are now listening to $resultSong', 
+          child: Text('You are now listening to $resultSong',
                   style: TextStyle(fontSize: 30.0,
                   color: Colors.red[200]
             ),

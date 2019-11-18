@@ -16,7 +16,7 @@ class MusicPlayer extends StatefulWidget {
 class MusicPlayerState extends State<MusicPlayer> {
   final String resultSong;
   MusicPlayerState(this.resultSong);
-  bool isplaying = false;
+  bool isplaying = true;
 
   AudioPlayer advancedPlayer;
 
@@ -29,15 +29,19 @@ class MusicPlayerState extends State<MusicPlayer> {
 
   Future loadMusic() async {
     advancedPlayer = await AudioCache().play('music/$resultSong');
-    isplaying = true;
   }
 
 
   Future stopMusic() async {
-    if (isplaying == true) {
       await advancedPlayer.stop();
-      isplaying = false;
-    } 
+  }
+
+  Future playMusic() async {
+       await advancedPlayer.resume();
+  }
+
+  Future pauseMusic() async {
+      await advancedPlayer.pause();
   }
   
   @override
@@ -48,7 +52,14 @@ class MusicPlayerState extends State<MusicPlayer> {
 
   @override
   Widget build(BuildContext context) {
+    var play = IconButton(icon: Icon(Icons.play_arrow), onPressed: () {
+             playMusic();
+          },);
+     var pause = IconButton(icon: Icon(Icons.pause), onPressed: () {
+             pauseMusic();
+          },);
      print('this is hit, $resultSong');
+     print('this is hit, $isplaying');
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.red[300],
@@ -59,13 +70,11 @@ class MusicPlayerState extends State<MusicPlayer> {
           title: const Text('Your Song!'),
           actions: <Widget>[IconButton(icon: Icon(Icons.arrow_back), onPressed: () {
               Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => MyApp()),
-            );
+              MaterialPageRoute(builder: (context) => MyApp()));
+              stopMusic();
           },),
-          IconButton(icon: Icon(Icons.stop), onPressed: () {
-            //  await audioPlayer.stop();
-             stopMusic();
-          },),
+           play,
+           pause,
           ],
         ),
         body: Center(

@@ -12,10 +12,10 @@ class Survey extends StatefulWidget {
 }
 class SurveyState extends State<Survey> {
   final questions = const[
-      {'questionText':'What do you feel like listening to?',
+      {'questionText':'How did you feel waking up today?',
       'answers':[
           {
-            'gif':'https://i.giphy.com/media/iDlsb5ZYn4tNMlmUt8/giphy.webp',
+            'gif':'https://i.giphy.com/media/1yjGMvL7Pp5UCW4YqV/200.webp',
             'score':1
           },
           {
@@ -49,11 +49,11 @@ class SurveyState extends State<Survey> {
       {'questionText':'How sleepy are you today?',
       'answers':[
         {
-          'gif':'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+          'gif':'http://giphygifs.s3.amazonaws.com/media/E549VaHiMjknS/giphy.gif',
           'score':1
         },
         {
-          'gif':'https://i.giphy.com/media/aZmD30dCFaPXG/giphy.webp',
+          'gif':'https://media.giphy.com/media/CZEYrddbVBVhS/giphy.gif',
           'score':2
         },
         {

@@ -5,14 +5,14 @@ import './music_player.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
-  
+
 
   Result(this.resultScore);
-   
+
   String get energyLevel{
-     String resultSong = 'Closed On Sunday.mp3';
+     String resultSong = 'Khruangbin - A Calf Born In Winter.mp3';
     if(resultScore >3 && resultScore <= 6){
-      resultSong = 'DaBaby - BOP on Broadway (Hip Hop Musical).mp3';
+      resultSong = 'Gang Starr - Full Clip.mp3';
     }
     if(resultScore >6){
       resultSong = 'Kanye West - Follow God (Lyrics).mp3';

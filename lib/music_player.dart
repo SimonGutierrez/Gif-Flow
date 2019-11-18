@@ -16,7 +16,6 @@ class MusicPlayer extends StatefulWidget {
 class MusicPlayerState extends State<MusicPlayer> {
   final String resultSong;
   MusicPlayerState(this.resultSong);
-  bool isplaying = true;
 
   AudioPlayer advancedPlayer;
 
@@ -59,7 +58,6 @@ class MusicPlayerState extends State<MusicPlayer> {
              pauseMusic();
           },);
      print('this is hit, $resultSong');
-     print('this is hit, $isplaying');
     return MaterialApp(
       theme: ThemeData(
         primaryColor: Colors.red[300],

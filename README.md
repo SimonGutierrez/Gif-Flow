@@ -6,7 +6,7 @@
 
 |     Our App        
 | ------------------------- |
-| ![Output sample](assets/music/icon.png)|
+| ![Output sample](assets/gifs/OurApp.gif)|
 
 ## Getting Started
 

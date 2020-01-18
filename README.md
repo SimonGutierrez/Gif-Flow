@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="./assets/icon.png">
+  <img src="./assets/music/icon.png">
 </p>
 
 # Gif_Flow 
 
 |     Our App        
 | ------------------------- |
-| ![Output sample](assets/icon.png)|
+| ![Output sample](assets/music/icon.png)|
 
 ## Getting Started
 

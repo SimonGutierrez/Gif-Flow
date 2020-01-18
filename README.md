@@ -4,7 +4,9 @@
 
 # Gif_Flow 
 
-|     Our App               |     Our App        
+## Our App
+
+|     Taking the Survey              |     Listening to your song       
 | ------------------------- | ------------------------- |
 | ![Output sample](assets/gifs/OurApp.gif)| ![Output sample](assets/gifs/PauseAndPlay.gif)|
 

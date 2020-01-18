@@ -2,11 +2,11 @@
   <img src="./assets/music/icon.png">
 </p>
 
-## Gif_Flow 
+# Gif_Flow 
 
-|     Our App        
-| ------------------------- |
-| ![Output sample](assets/gifs/OurApp.gif)|
+|     Our App               |     Our App        
+| ------------------------- | ------------------------- |
+| ![Output sample](assets/gifs/OurApp.gif)| ![Output sample](assets/gifs/PuaseAndPlay.gif)|
 
 ## Getting Started
 

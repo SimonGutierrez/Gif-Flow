@@ -6,7 +6,7 @@
 
 |     Our App               |     Our App        
 | ------------------------- | ------------------------- |
-| ![Output sample](assets/gifs/OurApp.gif)| ![Output sample](assets/gifs/PuaseAndPlay.gif)|
+| ![Output sample](assets/gifs/OurApp.gif)| ![Output sample](assets/gifs/PauseAndPlay.gif)|
 
 ## Getting Started
 

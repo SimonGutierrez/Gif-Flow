@@ -2,7 +2,7 @@
   <img src="./assets/music/icon.png">
 </p>
 
-# Gif_Flow 
+## Gif_Flow 
 
 |     Our App        
 | ------------------------- |

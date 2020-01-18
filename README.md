@@ -1,6 +1,12 @@
-# gif_flow
+<p align="center">
+  <img src="./assets/icon.png">
+</p>
 
-A new Flutter project.
+# Gif_Flow 
+
+|     Our App        
+| ------------------------- |
+| ![Output sample](assets/icon.png)|
 
 ## Getting Started
 
